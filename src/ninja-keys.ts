@@ -13,7 +13,7 @@ import { NinjaHeader } from './ninja-header.js';
 import { NinjaAction } from './ninja-action.js';
 import { footerHtml } from './ninja-footer.js';
 import { baseStyles } from './base-styles.js';
-
+console.log("Entered ninja keys file");
 @customElement('ninja-keys')
 export class NinjaKeys extends LitElement {
   static override styles = [baseStyles];
@@ -483,6 +483,7 @@ export class NinjaKeys extends LitElement {
   }
 
   private async _handleInput(event: CustomEvent<{ search: string }>) {
+    console.log("Something was typed");
     this._search = event.detail.search;
     await this.updateComplete;
     this.dispatchEvent(
